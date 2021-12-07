@@ -33,12 +33,18 @@ class School:
 
 #  6
 class SchoolBus(School, Bus):
-    def __init__(self, max_speed, mileage, seating_capacity, bus_school_color):
-        super().__init__(max_speed, mileage, seating_capacity)
+    def __init__(self, bus_school_color, get_school_id, number_of_students,
+                 seating_capacity, max_speed, mileage):
+        Bus.__init__(self, seating_capacity, max_speed, mileage)
+        School.__init__(self, get_school_id, number_of_students)
         self.bus_school_color = bus_school_color
 
-    def bus_school_color(self):
-        print(f'Bus color is {self.bus_school_color}.')
+    def print_bus_school_color(self):
+        print(f'School bus is {self.bus_school_color}')
+
+
+s_bus = SchoolBus('white', 100, 30, 30, 60, 5)
+s_bus.print_bus_school_color()
 
 
 #  7
@@ -67,21 +73,21 @@ for animal_sound in animals:
 
 
 #  8
-class City:
-    def __init__(self, name, population):
-        self.name = name
-        self.population = population
-
-    def check_population(self):
-        if self.population > 1500:
-            return self.population
-        else:
-            return (f'Your city {self.name} is too small')
-
-
-Lutsk = City('Lutsk', 50000)
-Pryvitne = City('Pryvitne', 1000)
-all_cities = (Lutsk, Pryvitne)
-
-for i in all_cities:
-    print(i.check_population())
+# class City:
+#     def __init__(self, name, population):
+#         self.name = name
+#         self.population = population
+#
+#     def check_population(self):
+#         if self.population > 1500:
+#             return self.population
+#         else:
+#             return (f'Your city {self.name} is too small')
+#
+#
+# Lutsk = City('Lutsk', 50000)
+# Pryvitne = City('Pryvitne', 1000)
+# all_cities = (Lutsk, Pryvitne)
+#
+# for i in all_cities:
+#     print(i.check_population())
