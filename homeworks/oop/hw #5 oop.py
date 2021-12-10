@@ -133,6 +133,10 @@ class AddressBook:
         self.birthday = birthday
         self.age = age
 
+    def __str__(self):
+        return f'addresbook {self.key,}, {self.name}, {self.phone_number},' \
+               f' {self.address}, {self.mail}, {self.birthday}, {self.age} '
+
 
 addressbook = AddressBook(key=1,
                           name='Alex',
