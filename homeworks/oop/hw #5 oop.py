@@ -180,23 +180,23 @@ setattr(student, 'email', 'alex@gmail.com')
 print(getattr(student, 'email'))
 
 
-#  11
-class Celsius:
-    def __init__(self, temperature=0):
-        self.temperature = temperature
-
-    def __repr__(self):
-        return repr(self.temperature)
-
-    @property
-    def temp_convert(self):
-        return self.temperature
-
-    @temp_convert.setter
-    def temp_convert(self, value):
-        self.temperature = value
-
-
-celsius = Celsius()
-fahrenheit = (celsius.temperature * 1.8) + 32
-print(fahrenheit)
+# #  11
+# class Celsius:
+#     def __init__(self, temperature=0):
+#         self.temperature = temperature
+#
+#     def __repr__(self):
+#         return repr(self.temperature)
+#
+#     @property
+#     def temp_convert(self):
+#         return self.temperature
+#
+#     @temp_convert.setter
+#     def temp_convert(self, value):
+#         self.temperature = value
+#
+#
+# celsius = Celsius()
+# fahrenheit = (celsius.temperature * 1.8) + 32
+# print(fahrenheit)
