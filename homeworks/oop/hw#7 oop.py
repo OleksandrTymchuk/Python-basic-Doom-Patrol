@@ -28,6 +28,9 @@ class Garden(metaclass=GardenMeta):
 
 
 class Plants(ABC):
+    def __init__(self):
+        self.state = None
+
     def grow(self):
         self.state += 1 if self.state < 3 else 0
         self.grow_info()
@@ -45,6 +48,7 @@ class Plants(ABC):
 
 class Tomato(Plants):
     def __init__(self, tomatoes_index, vegetable_type):
+        super().__init__()
         self.tomatoes_index = tomatoes_index
         self.vegetable_type = vegetable_type
         self.state = 0
@@ -56,6 +60,7 @@ class Tomato(Plants):
 
 class Apple(Plants):
     def __init__(self, apple_index, fruit_type):
+        super().__init__()
         self.apple_index = apple_index
         self.fruit_type = fruit_type
         self.state = 0
@@ -168,6 +173,7 @@ class Gardener:
 
 class Pests:
     def __init__(self, pest_index, pest_type, plants_list):
+        self.plants = None
         self.pest_type = pest_type
         self.pest_index = pest_index
         self.plants_list = plants_list
@@ -188,9 +194,15 @@ print(apple_tree.all_apples)
 
 gardener = Gardener("Ivan", [apple_tree, tomato_bush],
                     [apple_tree.all_pests, tomato_bush.all_pests])
+worm = Pests('Worm', 1, [apple_tree])
+
+fly = Pests('fly', 5, [apple_tree])
+tick = Pests('tick', 4, [tomato_bush])
+
 
 for _ in range(3):
     gardener.take_care()
+
 
 gardener.harvest()
 print(tomato_bush.all_tomatoes)
