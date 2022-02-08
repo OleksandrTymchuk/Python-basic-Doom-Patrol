@@ -21,3 +21,5 @@ thread2 = threading.Thread(target=quadratic_calculator(5, -2, -9))
 
 thread1.start()
 thread2.start()
+thread1.join()
+thread2.join()
