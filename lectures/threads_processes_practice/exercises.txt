@@ -1,0 +1,10 @@
+1. Create a script that download content over the network. The script should be able to
+download web pages from a few sites, but it really could be any network traffic.
+1a. On single thread
+1b. With multithreading
+1c. With multiprocessing
+
+2. Create a script that should find the line that you provided to it in the provided directory.
+2a. On single thread
+2b. With multithreading
+2c. With multiprocessing
