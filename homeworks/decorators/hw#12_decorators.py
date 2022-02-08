@@ -83,7 +83,7 @@ def times2(num):
 
 
 print(times2(2))
-times2('Not A Number')
+print(times2('Not A Number'))
 
 
 @type_check(str)
